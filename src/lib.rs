@@ -2,8 +2,8 @@ use std::io;
 use std::io::Read;
 use std::fs::File;
 
-pub fn read_username_from_file()->Result<String,io::Error>{
-    let f=File::open("hello.txt");
+pub fn read_username_from_file(path:&str)->Result<String,io::Error>{
+    let f=File::open(String::from(path));
 
     let mut f= match f{
         Ok(file)=>file,
